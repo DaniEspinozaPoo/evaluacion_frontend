@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>carrocomp!</title>
+	<link rel="icon" type="image/ico" href="docs/favicon_comp.png">
+	<link rel="stylesheet" type="text/css" href="node_modules/materialize-css/dist/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+	<!--REQUIRED STYLE SHEETS-->
+</head>
+<body>
+<!--NAV-->
+<nav>
+	<div class="navbar-fixed">
+		<div class="container nav-wrapper">
+			<a href="index.html" class="logotipo_carrocomp"><img src="docs/logo-gris.png"></a>
+			
+			<ul class="right hide-on-med-and-down">
+				<li>
+				    <!-- Ventana Modal -->
+		 			<div class="icon_informacion">
+						<a href="" data-modal="#modal" class="modal__trigger"><img src="docs/icon_info.svg"></a>
+						<div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+							<div class="modal__dialog">
+								<div class="modal__content">
+									<img src="docs/logo-peach.png">
+										<p>La nueva forma de moverte en la ciudad. Con carrocomp! puedes compartir tu viaje con amigos y cobrar el costo equitativamente.</p>
+
+						<!-- Boton para cerrar la Ventana modal -->
+							<a href="" class="modal__close demo-close">
+							<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+							</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>   
+<!--NAV-->
+
+<!--SELECT -->
+<div class="row">
+<div class="col s12 m3" id="part_select">
+	<div class="select_pais" align="center">
+	<div style="margin-bottom: 3%;">
+	<label for="origen">ORIGEN</label>
+        <select class="browser-default">
+            <option value="" type="text" name="origen" id="origen" disabled selected>Seleccione</option>
+                  <option value="1">Arica</option>
+                  <option value="2">Iquique</option>
+                  <option value="3">Antofagasta</option>
+                  <option value="4">Calama</option>
+                  <option value="5">La Serena</option>
+                  <option value="6">Valparaiso</option>
+                  <option value="7">Santiago</option>
+                  <option value="8">Rancagua</option>
+                  <option value="9">Talca</option>
+                  <option value="10">Concepción</option>
+                  <option value="11">Temuco</option>
+                  <option value="12">Valdivia</option>
+                  <option value="13">Puerto Montt</option>
+                  <option value="14">Coyhaique</option>
+                  <option value="15">Punta Arenas</option>
+        </select>
+	</div>
+
+	<div>
+		<label for="destino">DESTINO</label>
+        <select class="browser-default">
+            <option value="" type="text" name="destino" id="destino" disabled selected>Seleccione</option>
+                  <option value="1">Arica</option>
+                  <option value="2">Iquique</option>
+                  <option value="3">Antofagasta</option>
+                  <option value="4">Calama</option>
+                  <option value="5">La Serena</option>
+                  <option value="6">Valparaiso</option>
+                  <option value="7">Santiago</option>
+                  <option value="8">Rancagua</option>
+                  <option value="9">Talca</option>
+                  <option value="10">Concepción</option>
+                  <option value="11">Temuco</option>
+                  <option value="12">Valdivia</option>
+                  <option value="13">Puerto Montt</option>
+                  <option value="14">Coyhaique</option>
+                  <option value="15">Punta Arenas</option>
+        </select>
+	</div>
+</div>
+<span id="mensaje_error" class="hide"></span>
+<input class="buscar" type="button" id="buscar" value="Buscar" disabled="disabled" />
+<a href=""></a>
+</div>
+</div>
+<!--/SELECT -->
+
+<!--/VEHICULO -->
+<section class="row">
+	<div class="col s12 m3">
+		<div id="select_transporte">
+
+			<p class="selv">SELECCIONE VEHICULO</p>
+			
+			<form action="#">
+				<p class="checks">
+					<input name="group1" type="radio" id="test1" />
+					<label for="test1"><img src="docs/moto.png"></label>
+					<div class="parr">
+						<strong>Motocicleta</strong>
+						<p>máximo 2 pasajeros</p>
+					</div>
+				</p>
+				<p class="checks">
+					<input name="group1" type="radio" id="test2" />
+					<label for="test2" ><img src="docs/auto.png"></label>
+					<div class="parr">
+						<strong>Automóvil</strong>
+						<p>máximo 5 pasajeros</p>
+					</div>
+				</p>
+				<p>
+					<input name="group1" type="radio" id="test3" />
+					<label for="test3" ><img src="docs/van.png"></label>
+					<div class="parr">
+						<strong>Minivan</strong>
+						<p>máximo 10 pasajeros</p>
+					</div>
+				</p>
+				<p>
+					<input name="group1" type="radio" id="test4" />
+					<label for="test4" ><img src="docs/camion.png"></label>
+					<div class="parr">
+						<strong>Camión</strong>
+						<p>máximo 3 pasajeros</p>
+					</div>
+				</p>
+			</form>
+			<h3 style="font-size: 19px;">Cantidad pasajeros:</h3>
+		</div>
+		<input class="compartir" type="button" id="compartir" value="compartir" disabled="disabled" />
+	</div>
+
+</section>
+
+
+
+</body>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script type="text/javascript" src="dist/js/script.min.js"></script>
+</html>

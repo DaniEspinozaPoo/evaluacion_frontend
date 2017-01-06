@@ -1,0 +1,18 @@
+
+.logotipo_carrocomp{
+	img{
+		width: 25%;
+    	padding: 15px 18px;
+    	
+    	@media screen and (max-width: $break-large) {
+   		width: 100%;
+   		padding: 8px 0px;
+    
+  }
+	}
+}
+nav{
+	@media screen and (max-width: $break-large) {
+	    height: 102px;
+}
+}
