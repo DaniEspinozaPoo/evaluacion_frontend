@@ -6,8 +6,17 @@
 	<title>carrocomp!</title>
 	<link rel="icon" type="image/ico" href="docs/favicon_comp.png">
 	<link rel="stylesheet" type="text/css" href="node_modules/materialize-css/dist/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+	<style type="text/css">
+	
+		div#results #directions_panel	{ display:none;width: 35%; height: 100%; overflow: auto; float: right; }
+	</style>
+
+	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true" ></script>
+
 	<!--REQUIRED STYLE SHEETS-->
 </head>
 <body>
@@ -44,71 +53,43 @@
 <!--NAV-->
 
 <!--SELECT -->
+
 <div class="row">
-<div class="col s12 m3" id="part_select">
-	<div class="select_pais" align="center">
-	<div style="margin-bottom: 3%;">
-	<label for="origen">ORIGEN</label>
-        <select class="browser-default">
-            <option value="" type="text" name="origen" id="origen" disabled selected>Seleccione</option>
-                  <option value="1">Arica</option>
-                  <option value="2">Iquique</option>
-                  <option value="3">Antofagasta</option>
-                  <option value="4">Calama</option>
-                  <option value="5">La Serena</option>
-                  <option value="6">Valparaiso</option>
-                  <option value="7">Santiago</option>
-                  <option value="8">Rancagua</option>
-                  <option value="9">Talca</option>
-                  <option value="10">Concepción</option>
-                  <option value="11">Temuco</option>
-                  <option value="12">Valdivia</option>
-                  <option value="13">Puerto Montt</option>
-                  <option value="14">Coyhaique</option>
-                  <option value="15">Punta Arenas</option>
-        </select>
+  <div class="col s12 m12 embed-responsive embed-responsive-16by9">
+  	<div id="results">
+		<div id="map_canvas"></div>
+			<div id="routes_panel">
+				<div id="distance_panel" style="display:none;width: 100%; height: 20%;"></div>
+			</div>
 	</div>
+	<div class="col s12 m3" id="part_select">
+	  <div class="select_pais" align="center">
+		<div style="margin-bottom: 3%;">
+			<label for="start">ORIGEN</label>
+				<input class="browser-default" type="text" id="start"  placeholder="Seleccione"/>
+		</div>
 
-	<div>
-		<label for="destino">DESTINO</label>
-        <select class="browser-default">
-            <option value="" type="text" name="destino" id="destino" disabled selected>Seleccione</option>
-                  <option value="1">Arica</option>
-                  <option value="2">Iquique</option>
-                  <option value="3">Antofagasta</option>
-                  <option value="4">Calama</option>
-                  <option value="5">La Serena</option>
-                  <option value="6">Valparaiso</option>
-                  <option value="7">Santiago</option>
-                  <option value="8">Rancagua</option>
-                  <option value="9">Talca</option>
-                  <option value="10">Concepción</option>
-                  <option value="11">Temuco</option>
-                  <option value="12">Valdivia</option>
-                  <option value="13">Puerto Montt</option>
-                  <option value="14">Coyhaique</option>
-                  <option value="15">Punta Arenas</option>
-        </select>
+		<div>
+			<label for="end">DESTINO</label>
+				<input class="browser-default" type="text" id="end"  placeholder="Seleccione"/>
+		</div>
+	  </div>
+	<span id="mensaje_error" class="hide"></span>
+		<p><button type="button" id="search" >Buscar</button></p>
+
 	</div>
-</div>
-<span id="mensaje_error" class="hide"></span>
-<input class="buscar" type="button" id="buscar" value="Buscar" disabled="disabled" />
-<a href=""></a>
-</div>
-</div>
-<!--/SELECT -->
-
-<!--/VEHICULO -->
+  </div>
+  <!--VEHICULO -->
 <section class="row">
 	<div class="col s12 m3">
-		<div id="select_transporte">
-
-			<p class="selv">SELECCIONE VEHICULO</p>
+		<div id="select_transporte"  style="display:none;" >
+			<div class="estilos_transp">
+				<p class="selv">SELECCIONE VEHICULO</p>
 			
 			<form action="#">
 				<p class="checks">
 					<input name="group1" type="radio" id="test1" />
-					<label for="test1"><img src="docs/moto.png"></label>
+					<label id="moto" for="test1"><img src="docs/moto.png"></label>
 					<div class="parr">
 						<strong>Motocicleta</strong>
 						<p>máximo 2 pasajeros</p>
@@ -139,17 +120,39 @@
 					</div>
 				</p>
 			</form>
-			<h3 style="font-size: 19px;">Cantidad pasajeros:</h3>
-		</div>
-		<input class="compartir" type="button" id="compartir" value="compartir" disabled="disabled" />
+			<h3 style="font-size: 19px;">Cantidad pasajeros:<input class=type="text" id="personas"  placeholder="0"/></h3>
+			</div>
+			<p><button class="compartir" type="button" id="compartir" value="compartir">Calcular</button></p>
+		</div>		
 	</div>
-
 </section>
+<!--VEHICULO -->
+</div>
+<!--/SELECT -->
 
+
+
+<!--Part map -->
+	<div>	
+		<p>
+		<select id="travelMode" class="routeOptions">
+			<option value="DRIVING" selected="selected">Driving</option>
+          	<option value="BICYCLING">Bicycling</option>
+          	<option value="WALKING">Walking</option>
+      	</select>
+      	<select id="unitSystem" class="routeOptions">
+          	<option value="METRIC" selected="selected">Metric</option>
+          	<option value="IMPERIAL">Imperial</option>
+      	</select>
+		</p>
+	
+  	</div>
+<!--/Part map -->
 
 
 </body>
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script type="text/javascript" src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="dist/js/script.min.js"></script>
 </html>

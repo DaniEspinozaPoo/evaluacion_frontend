@@ -1,8 +1,8 @@
-#select_transporte{
+.estilos_transp{
 	border: 1px solid #A0A0A0;
 	background-color: #FFFFFF;
 	border-radius: 7px;
-    padding: 7% 6%;
+    padding: 0% 5%;
     	@media screen and (max-width: $break-small) {
    		width: 88%;
    		padding: 12px 24px;
@@ -30,13 +30,24 @@ img{
     margin-left: 41%;
     margin-top: -8%;
 }
-
+	#personas{
+			width: 14%;
+			border: none;
+    border: 1px solid #FF9800;
+    border-radius: 0;
+    outline: none;
+        margin-left: 4%;
+		}
 }
 .compartir{
-					background-color: #FF9800;
-				    color: #FFF;
-				    width: 100%;
-				    padding: 1% 0;
-				    margin-top: 3%;
-				    font-size: 18px;
+			background-color: #FF9800;
+		    color: #FFF;
+			width: 100%;
+			padding: 1% 0;
+			margin-top: 3%;
+			font-size: 18px;
+
+		
+
+
 }

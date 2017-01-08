@@ -2,38 +2,46 @@
 	border: 1px solid #A0A0A0;
 	background-color: #FFFFFF;
 	border-radius: 7px;
-    padding: 7% 6%;
-    margin-top: 60%;
+    padding: 3% 6%;
+
     	@media screen and (max-width: $break-small) {
    		width: 88%;
    		padding: 12px 24px;
 }
+
+input{
+	border: none;
+    border: 1px solid #FF9800;
+    border-radius: 0;
+    outline: none;
+    height: 2rem;
+    width: 100%;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    box-shadow: none;
+    box-sizing: content-box; 
+    transition: all 0.3s;
+
+
+}
+
 		label {
 		        font-size: 18px;
 			    color: #616161;
 			    letter-spacing: 10px;
 			    float: left;
 		}
-			select {
-				    background-color: rgba(255,255,255,0.9);
-				    width: 100%;
-				    padding: 2px;
-				    border: 1px solid #FF5722;
-				    border-radius: 5px;
-				    height: 36px;
-		}
+		
 
 }
 
-			.buscar{
+			#search{
 				    background-color: #FF9800;
 				    color: #FFF;
 				    width: 100%;
 				    padding: 1% 0;
-				    margin-top: 3%;
 				    font-size: 18px;
+
 			}
 
-body{
-	background-image: url(../../docs/background.jpg);
-}			
+		
