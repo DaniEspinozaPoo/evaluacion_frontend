@@ -74,7 +74,7 @@
 				<input class="browser-default" type="text" id="end"  placeholder="Seleccione"/>
 		</div>
 	  </div>
-	<span id="mensaje_error" class="hide"></span>
+
 		<p><button type="button" id="search" >Buscar</button></p>
 
 	</div>
@@ -86,7 +86,7 @@
 			<div class="estilos_transp">
 				<p class="selv">SELECCIONE VEHICULO</p>
 			
-			<form action="#">
+			<form action="" class="validar_form">
 				<p class="checks">
 					<input name="group1" type="radio" id="test1" />
 					<label class="moto" for="test1"><img src="docs/moto.png"></label>
@@ -103,7 +103,7 @@
 						<p>máximo 5 pasajeros</p>
 					</div>
 				</p>
-				<p>
+				<p class="checks">
 					<input name="group1" type="radio" id="test3" />
 					<label class="van" for="test3" ><img src="docs/van.png"></label>
 					<div class="parr">
@@ -111,7 +111,7 @@
 						<p>máximo 10 pasajeros</p>
 					</div>
 				</p>
-				<p>
+				<p class="checks">
 					<input name="group1" type="radio" id="test4" />
 					<label class="camion" for="test4" ><img src="docs/camion.png"></label>
 					<div class="parr">
@@ -119,10 +119,12 @@
 						<p>máximo 3 pasajeros</p>
 					</div>
 				</p>
-			</form>
-			<h3 style="font-size: 19px;">Cantidad pasajeros:<input class=type="text" id="personas"  placeholder="0"/></h3>
+				<span id="mensaje_error" class="hide"></span>
+				<h3 style="font-size: 19px;">Cantidad pasajeros:<input class=type="text" id="personas"  placeholder="0"/></h3>
 			</div>
 			<p><button class="compartir" type="button" id="compartir" value="compartir">Calcular</button></p>
+			</form>
+			
 		</div>		
 	</div>
 </section>
