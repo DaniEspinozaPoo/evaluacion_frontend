@@ -8,13 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="node_modules/materialize-css/dist/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
-
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
-	<style type="text/css">
-	
-		div#results #directions_panel	{ width: 35%; height: 100%; overflow: auto; float: right; }
-	</style>
-
 	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true" ></script>
 
 	<!--REQUIRED STYLE SHEETS-->
@@ -68,15 +62,12 @@
 			<label for="start">ORIGEN</label>
 				<input class="browser-default" type="text" id="start"  placeholder="Seleccione"/>
 		</div>
-
 		<div>
 			<label for="end">DESTINO</label>
 				<input class="browser-default" type="text" id="end"  placeholder="Seleccione"/>
 		</div>
 	  </div>
-
 		<p><button type="button" id="search" >Buscar</button></p>
-
 	</div>
   </div>
   <!--VEHICULO -->
@@ -132,24 +123,33 @@
 </div>
 <!--/SELECT -->
 
-
-
 <!--Part map -->
 	<div>	
 		<p>
 		<select id="travelMode" class="routeOptions">
-			<option value="DRIVING" selected="selected">Driving</option>
-          	<option value="BICYCLING">Bicycling</option>
-          	<option value="WALKING">Walking</option>
+			<option value="DRIVING" selected="selected"></option>
       	</select>
       	<select id="unitSystem" class="routeOptions">
-          	<option value="METRIC" selected="selected">Metric</option>
-          	<option value="IMPERIAL">Imperial</option>
+          	<option value="METRIC" selected="selected"></option>
       	</select>
 		</p>
-	
   	</div>
 <!--/Part map -->
+
+<!--alert precio total -->
+<div class="row">
+	<div class="col s12 m3">
+		<div id="resultado_money" style="display:none;">
+
+			<img src="docs/logo-peach.png">
+			
+            <h3>Costo por persona :</h3> 
+            <input id="editWide" name="ReadOut" type="Text"
+              	size=28 value="0" width="250px"> 	
+		</div>
+		
+	</div>
+</div>
 
 
 </body>

@@ -1,0 +1,25 @@
+#resultado_money{
+	background-color: #FFFFFF;
+	text-align: center;
+
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  opacity: 0;
+   -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+  max-height: 47%;
+  width: 25%;
+  line-height: 12px;
+  
+	h3{
+		font-size: 56px;
+	}
+}
